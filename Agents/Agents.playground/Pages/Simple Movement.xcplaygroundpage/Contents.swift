@@ -31,17 +31,17 @@ let west = 6
 let northWest = 7
 
 // Set the step size (travel distance per iteration)
-let stepSize = 1
+let stepSize = 20
 
 // Set the pixel size
-let diameter = 10
+let diameter = 20
 
 // Generate a starting position
 var x = random(from: 50, toButNotIncluding: canvas.width - 50)
 var y = random(from: 50, toButNotIncluding: canvas.height - 50)
 
 // Travel 500 steps
-for _ in 1...500 {
+for i in 1...1500 {
     
     // Generate a random direction
     var direction = random(from: 0, toButNotIncluding: 8)
@@ -83,10 +83,13 @@ for _ in 1...500 {
         y = y + stepSize
     }
     
+
     // Draw the agent in it's new position
-    canvas.fillColor = Color(hue: 0, saturation: 0, brightness: 0, alpha: 25)
+    canvas.fillColor = Color(hue: Float(i), saturation: 100, brightness: 75, alpha: 25)
     canvas.drawEllipse(centreX: x, centreY: y, width: diameter, height: diameter)
+    
 }
+
 
 /*:
  ## Template code
